@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#26D19D</color>
+    <color name="colorPrimaryDark">#269070</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="flushOrange">#fb8702</color>
+    <color name="shamrock">#26D19D</color>
+    <color name="shamrockDark">#269070</color>
+    <color name="grayButton">#FFCCCCCC</color>
+
+
+</resources>

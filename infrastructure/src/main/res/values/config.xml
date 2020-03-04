@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="base_url">https://api-simulator-calc.easynvest.com.br/calculator/</string>
+</resources>

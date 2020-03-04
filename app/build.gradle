@@ -1,0 +1,152 @@
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+def buildVersionCode() {
+    //MM - Major Number
+    //mm - Minor Number
+    //bbbbb - Build number
+    int major = versions.majorVersion
+    int minor = versions.minorVersion
+    int build = versions.buildNumber
+    return (major * 10000000) + (minor * 100000) + build
+}
+
+def buildVersionName() {
+    def major = "${versions.majorVersion}".padLeft(2, '0')
+    def minor = "${versions.minorVersion}".padLeft(2, '0')
+    def build = "${versions.buildNumber}".padLeft(5, '0')
+    return major + '.' + minor + '.' + build
+}
+
+static def getDateTimeVersion() {
+    DateFormat df = new SimpleDateFormat("yyMMdd.HHmm")
+    return df.format(new Date())
+}
+
+android {
+    compileSdkVersion versions.compileSdkVersion
+    buildToolsVersion versions.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.nm.teste_android"
+        minSdkVersion versions.minSdkVersion
+        targetSdkVersion versions.targetSdkVersion
+        versionCode buildVersionCode()
+        versionName buildVersionName()
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+// To inline the bytecode built with JVM target 1.8 into
+// bytecode that is being built with JVM target 1.6. (e.g. navArgs)
+
+
+    compileOptions {
+        sourceCompatibility versions.java
+        targetCompatibility versions.java
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    dataBinding {
+        enabled true
+    }
+    androidExtensions {
+        experimental = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(path: ':data')
+    implementation project(path: ':domain')
+    implementation project(path: ':infrastructure')
+
+    implementation libraries.kotlin
+
+    implementation libraries.androidxAppcompat
+    implementation libraries.androidxCore
+    implementation libraries.androidxConstraintLayout
+
+    // Calligraphy
+    implementation libraries.calligraphy
+
+    // CircleImage
+    implementation libraries.circleImage
+
+    // Coroutine
+    implementation libraries.coroutinesAndroid
+    implementation libraries.coroutinesAdapter
+    implementation libraries.coroutinesCore
+
+    implementation libraries.googleMaterial
+
+    // Glide
+    implementation libraries.glide
+
+    // Koin
+    implementation libraries.koinAndroidxScope
+    implementation libraries.koinAndroidxViewModel
+    implementation libraries.koinAndroidxExt
+    implementation libraries.koinCore
+
+    // LiveData
+    implementation libraries.liveData
+
+    // Logging Interceptor
+    implementation libraries.loggingInterceptor
+
+    // Multidex
+    implementation libraries.multidex
+
+    // Retrofit
+    implementation libraries.retrofit
+    implementation libraries.retrofitGson
+
+    // SwipeRefreshLayout
+    implementation libraries.swiperefreshlayout
+
+    // ViewModel
+    implementation libraries.viewModel
+
+    // AndroidxArchCore
+    testImplementation libraries.androidxArchCore
+
+    // CoroutinesTest
+    testImplementation libraries.coroutinesTest
+
+    // JUnit
+    testImplementation libraries.junit
+
+    // Mockk
+    testImplementation libraries.mockk
+
+    // JUnit
+    androidTestImplementation libraries.androidxJunit
+
+    // Cucumber
+    androidTestImplementation libraries.cucumberAndroid
+    androidTestImplementation libraries.cucumberPicocontainer
+
+    // Espresso
+    androidTestImplementation libraries.espresso
+
+    // MockWebServer
+    androidTestImplementation libraries.mockWebServer
+
+    implementation 'io.github.inflationx:calligraphy3:3.1.1'
+    implementation 'io.github.inflationx:viewpump:2.0.3'
+}

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">infrastructure</string>
+
+    <string name="generic_error">Algo Deu Errado!</string>
+    <string name="no_connection_error">Sem Conexão!</string>
+
+</resources>

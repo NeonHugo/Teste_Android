@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="30dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/simulate_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/txtSizeHighBold"
+            android:id="@+id/tv_gross_amount_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            tools:text="R$ 200,00"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_form"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_gross_amount_main">
+
+            <TextView
+                android:id="@+id/tv_results"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/results_title"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_gross_amount_profit_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="R$ 20,00"
+                android:textColor="@color/shamrock"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_results"
+                app:layout_constraintStart_toEndOf="@+id/tv_results" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_form"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="232dp" />
+
+        <TextView
+            android:id="@+id/tv_amount_applied_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/amount_applied_title"
+            app:layout_constraintEnd_toStartOf="@+id/gl_form"
+            app:layout_constraintHorizontal_bias="0.41"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_form" />
+
+        <TextView
+            style="@style/txtBold"
+            android:id="@+id/tv_amount_applied"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            tools:text="R$ 1.000,00"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_amount_applied_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_form" />
+
+        <!-- -->
+        <TextView
+            android:id="@+id/tv_gross_amount_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/gross_amount_title"
+            app:layout_constraintEnd_toStartOf="@+id/gl_form"
+            app:layout_constraintHorizontal_bias="0.41"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_amount_applied_title" />
+
+        <TextView
+            style="@style/txtBold"
+            android:id="@+id/tv_gross_amount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            tools:text="R$ 1.000,00"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_gross_amount_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_form" />
+
+        <!-- -->
+        <TextView
+            android:id="@+id/tv_gross_amount_profit_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:text="@string/gross_amount_profit_title"
+            app:layout_constraintEnd_toStartOf="@+id/gl_form"
+            app:layout_constraintHorizontal_bias="0.41"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_gross_amount_title" />
+
+        <TextView
+            style="@style/txtBold"
+            android:id="@+id/tv_gross_amount_profit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            tools:text="R$ 1.000,00"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_gross_amount_profit_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_form" />
+
+        <!-- -->
+        <TextView
+            android:id="@+id/tv_taxes_amount_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/taxes_amount_title"
+            app:layout_constraintEnd_toStartOf="@+id/gl_form"
+            app:layout_constraintHorizontal_bias="0.41"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_gross_amount_profit_title" />
+
+        <TextView
+            style="@style/txtBold"
+            android:id="@+id/tv_taxes_amount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            tools:text="R$ 1.000,00"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_taxes_amount_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_form" />
+
+        <!-- -->
+        <TextView
+            android:id="@+id/tv_net_amount_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/net_amount_title"
+            app:layout_constraintEnd_toStartOf="@+id/gl_form"
+            app:layout_constraintHorizontal_bias="0.41"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_taxes_amount_title" />
+
+        <TextView
+            style="@style/txtBold"
+            android:id="@+id/tv_net_amount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            tools:text="R$ 1.000,00"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_net_amount_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_form" />
+
+        <!-- -->
+        <TextView
+            android:id="@+id/tv_maturity_date_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/maturity_date_title"
+            app:layout_constraintEnd_toStartOf="@+id/gl_form"
+            app:layout_constraintHorizontal_bias="0.41"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_net_amount_title" />
+
+        <TextView
+            style="@style/txtBold"
+            android:id="@+id/tv_maturity_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            tools:text="R$ 1.000,00"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_maturity_date_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_form" />
+
+        <!-- -->
+        <TextView
+            android:id="@+id/tv_maturity_business_days_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/maturity_business_days_title"
+            app:layout_constraintEnd_toStartOf="@+id/gl_form"
+            app:layout_constraintHorizontal_bias="0.41"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_maturity_date_title" />
+
+        <TextView
+            style="@style/txtBold"
+            android:id="@+id/tv_maturity_business_days"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            tools:text="R$ 1.000,00"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_maturity_business_days_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_form" />
+
+        <!-- -->
+        <TextView
+            android:id="@+id/tv_monthly_gross_rate_profit_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/monthly_gross_rate_profit_title"
+            app:layout_constraintEnd_toStartOf="@+id/gl_form"
+            app:layout_constraintHorizontal_bias="0.41"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_maturity_business_days_title" />
+
+        <TextView
+            style="@style/txtBold"
+            android:id="@+id/tv_monthly_gross_rate_profit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            tools:text="R$ 1.000,00"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_monthly_gross_rate_profit_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_form" />
+
+        <!-- -->
+        <TextView
+            android:id="@+id/tv_rate_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/rate_title"
+            app:layout_constraintEnd_toStartOf="@+id/gl_form"
+            app:layout_constraintHorizontal_bias="0.41"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_monthly_gross_rate_profit_title" />
+
+        <TextView
+            style="@style/txtBold"
+            android:id="@+id/tv_rate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            tools:text="R$ 1.000,00"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_rate_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_form" />
+
+        <!-- -->
+        <TextView
+            android:id="@+id/tv_annual_gross_rate_profit_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/annual_gross_rate_profit_title"
+            app:layout_constraintEnd_toStartOf="@+id/gl_form"
+            app:layout_constraintHorizontal_bias="0.41"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_rate_title" />
+
+        <TextView
+            style="@style/txtBold"
+            android:id="@+id/tv_annual_gross_rate_profit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            tools:text="R$ 1.000,00"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_annual_gross_rate_profit_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_form" />
+
+        <!-- -->
+        <TextView
+            android:id="@+id/tv_rate_profit_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/rate_profit_title"
+            app:layout_constraintEnd_toStartOf="@+id/gl_form"
+            app:layout_constraintHorizontal_bias="0.41"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_annual_gross_rate_profit_title" />
+
+        <TextView
+            style="@style/txtBold"
+            android:id="@+id/tv_rate_profit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            tools:text="R$ 1.000,00"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_rate_profit_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_form" />
+
+        <Button
+            android:id="@+id/btn_simulate_repeat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/shamrock"
+            android:text="@string/btn_simulate_repeat"
+            app:cornerRadius="20dp"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:rippleColor="@color/shamrockDark" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- -->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

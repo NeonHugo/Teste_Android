@@ -1,0 +1,101 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(path: ':infrastructure')
+
+    implementation libraries.kotlin
+
+    implementation libraries.androidxAppcompat
+    implementation libraries.androidxCore
+    implementation libraries.androidxConstraintLayout
+
+    // Calligraphy
+    implementation libraries.calligraphy
+
+    // CircleImage
+    implementation libraries.circleImage
+
+    // Coroutine
+    implementation libraries.coroutinesAndroid
+    implementation libraries.coroutinesAdapter
+    implementation libraries.coroutinesCore
+
+    implementation libraries.googleMaterial
+
+    // Glide
+    implementation libraries.glide
+
+    // Koin
+    implementation libraries.koinAndroidxScope
+    implementation libraries.koinAndroidxViewModel
+    implementation libraries.koinAndroidxExt
+    implementation libraries.koinCore
+
+    // LiveData
+    implementation libraries.liveData
+
+    // Logging Interceptor
+    implementation libraries.loggingInterceptor
+
+    // Multidex
+    implementation libraries.multidex
+
+    // Retrofit
+    implementation libraries.retrofit
+    implementation libraries.retrofitGson
+
+    // ViewModel
+    implementation libraries.viewModel
+
+    // AndroidxArchCore
+    testImplementation libraries.androidxArchCore
+
+    // CoroutinesTest
+    testImplementation libraries.coroutinesTest
+
+    // JUnit
+    testImplementation libraries.junit
+
+    // Mockk
+    testImplementation libraries.mockk
+
+    // JUnit
+    androidTestImplementation libraries.androidxJunit
+
+    // Cucumber
+    androidTestImplementation libraries.cucumberAndroid
+    androidTestImplementation libraries.cucumberPicocontainer
+
+    // Espresso
+    androidTestImplementation libraries.espresso
+
+    // MockWebServer
+    androidTestImplementation libraries.mockWebServer
+}

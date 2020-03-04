@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Teste Android</string>
+    <string name="action_settings">Configurações</string>
+
+    <!-- Strings used for FormActivity -->
+    <string name="form_activity_title">Formulário</string>
+    <string name="invested_amount_tile">Quanto você gostaria de aplicar?*</string>
+    <string name="invested_amount_hint">R$</string>
+    <string name="dt_venc_title">Qual a data de vencimento?*</string>
+    <string name="dt_venc_hint">dia/mês/ano</string>
+    <string name="cdi_title">Qual percentual do CDi do investimento?*</string>
+    <string name="cdi_hint">100%</string>
+    <string name="btn_simulate_label">Simular</string>
+
+    <!-- Strings used for SimulateActivity -->
+    <string name="simulate_activity_title">Simulação</string>
+    <string name="simulate_title">Resultado da Simulação</string>
+    <string name="results_title">Rendimento total de</string>
+    <string name="amount_applied_title">Valor aplicado inicialmente</string>
+    <string name="gross_amount_title">Valor bruto do Investimento</string>
+    <string name="gross_amount_profit_title">Valor do rendimento</string>
+    <string name="taxes_amount_title">IR sobre o investimento</string>
+    <string name="net_amount_title">Valor líquido do Investimento</string>
+    <string name="maturity_date_title">Data de Resgate</string>
+    <string name="maturity_business_days_title">Dias corridos</string>
+    <string name="monthly_gross_rate_profit_title">Rendimento Mensal</string>
+    <string name="rate_title">Percentual do CDI do investimento</string>
+    <string name="annual_gross_rate_profit_title">Rentabilidade anual</string>
+    <string name="rate_profit_title">Rentabilidade no período</string>
+    <string name="btn_simulate_repeat">Simular novamente</string>
+
+
+</resources>

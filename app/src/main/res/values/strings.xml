@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Teste_Android</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Strings used for FormActivity -->
+    <string name="form_activity_title">Form</string>
+    <string name="invested_amount_tile">How much would you like to apply?*</string>
+    <string name="invested_amount_hint">R$</string>
+    <string name="dt_venc_title">What is the expiration date?*</string>
+    <string name="dt_venc_hint">day/month/year</string>
+    <string name="cdi_title">What percentage of the investment CDI?*</string>
+    <string name="cdi_hint">100%</string>
+    <string name="btn_simulate_label">Simulate</string>
+
+    <!-- Strings used for SimulateActivity -->
+    <string name="simulate_activity_title">Simulation</string>
+    <string name="simulate_title">Simulation Result</string>
+    <string name="results_title">Total income</string>
+    <string name="amount_applied_title">Initially applied amount</string>
+    <string name="gross_amount_title">Gross Investment Amount</string>
+    <string name="gross_amount_profit_title">Yield value</string>
+    <string name="taxes_amount_title">IR on investment</string>
+    <string name="net_amount_title">Net investment value</string>
+    <string name="maturity_date_title">Redemption Date</string>
+    <string name="maturity_business_days_title">Running days</string>
+    <string name="monthly_gross_rate_profit_title">Monthly income</string>
+    <string name="rate_title">Investment CDI percentage</string>
+    <string name="annual_gross_rate_profit_title">Annual profitability</string>
+    <string name="rate_profit_title">Profitability in the period</string>
+    <string name="btn_simulate_repeat">Simulate again</string>
+
+</resources>
