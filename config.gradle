@@ -23,7 +23,7 @@ ext.versions = [
         gson                       : '2.8.6',
         java                       : JavaVersion.VERSION_1_8,
         koin                       : '2.0.1',
-        kotlin                     : '1.3.61',
+        kotlin                     : '1.3.71',
         liveData                   : '2.2.0',
         loggingInterceptor         : '4.4.0',
         multidex                   : '2.0.1',

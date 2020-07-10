@@ -4,6 +4,7 @@ import com.nm.data.mapper.SimulationResponseToSimulationMapper
 import com.nm.domain.entity.InvestmentParameter
 import com.nm.domain.entity.Simulate
 import com.nm.infrastructure.net.RetrofitBuild
+import com.nm.infrastructure.net.RetrofitBuild.makeService
 import com.nm.infrastructure.net.SuccessResponse
 import kotlinx.coroutines.runBlocking
 import okhttp3.mockwebserver.Dispatcher
@@ -25,7 +26,7 @@ class SimulateRemoteDataSourceImplTest {
         initMocks(this)
 
         simulateRemoteDataSource = SimulateRemoteDataSourceImpl(
-            RetrofitBuild.makeService(mockWebServer!!.url("/")),
+            makeService(mockWebServer!!.url("/")),
             SimulationResponseToSimulationMapper()
         )
     }

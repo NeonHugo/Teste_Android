@@ -23,7 +23,12 @@ def buildVersionName() {
     return major + '.' + minor + '.' + build
 }
 
-static def getDateTimeVersion() {
+def buildNHugo() {
+    def value = 1020
+    return "HUGO " + value.toString()
+}
+
+def getDateTimeVersion() {
     DateFormat df = new SimpleDateFormat("yyMMdd.HHmm")
     return df.format(new Date())
 }
@@ -41,6 +46,9 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         multiDexEnabled true
+
+        buildConfigField("Double", "HUGO", getDateTimeVersion())
+        buildConfigField("String", "HUGO_S", "\"${getDateTimeVersion()}\"")
     }
 
     buildTypes {

@@ -4,8 +4,7 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.nm.domain.entity.InvestmentParameter
 import com.nm.domain.entity.Simulate
 import com.nm.domain.usecase.SimulateUseCase
-import com.nm.infrastructure.net.Network
-import com.nm.infrastructure.net.SuccessResponse
+import com.nm.infrastructure.net.*
 import com.nm.infrastructure.util.extensions.livedata.getOrAwaitValue
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
@@ -21,6 +20,7 @@ import org.junit.Rule
 import org.junit.Test
 import org.koin.core.context.startKoin
 import org.koin.core.context.stopKoin
+import retrofit2.Response
 
 class FormActivityViewModelTest {
     @get:Rule
@@ -121,4 +121,30 @@ class FormActivityViewModelTest {
             annualNetRateProfit = 22.45
         ), simulate)
     }
+
+    @Test
+    fun unSuccessfulSimulation() {
+        coEvery {
+            simulateUseCase.showSimulation(
+                "32323.0",
+                "CDI",
+                "123",
+                "false",
+                "2023-03-03"
+            )
+        } returns mockErrorResponseData()
+
+        formActivityViewModel.onInvestedAmountTextChanged("32323.0")
+        formActivityViewModel.onMaturityDateTextChanged("03/03/2023")
+        formActivityViewModel.onRateTextChanged("123")
+        formActivityViewModel.onSimulation()
+
+        val simulate = formActivityViewModel.empty.getOrAwaitValue()
+
+        assertEquals(ApiError(10, "Fudeu", "Fudeu Mesmo."), simulate)
+    }
+
+    private fun mockErrorResponseData(): ResultResponse<Simulate> = ErrorResponse(
+        error = ApiError(10, "Fudeu", "Fudeu Mesmo.")
+    )
 }

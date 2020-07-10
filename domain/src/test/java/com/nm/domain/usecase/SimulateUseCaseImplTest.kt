@@ -11,14 +11,11 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
-import org.mockito.ArgumentMatchers
-import org.mockito.ArgumentMatchers.*
 import org.mockito.Mock
 import org.mockito.Mockito.doReturn
 import org.mockito.MockitoAnnotations.initMocks
 
 class SimulateUseCaseImplTest {
-
     @Mock
     lateinit var simulateRepository: SimulateRepository
 

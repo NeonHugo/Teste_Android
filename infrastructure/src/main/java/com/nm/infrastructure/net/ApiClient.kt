@@ -1,9 +1,7 @@
 package com.nm.infrastructure.net
 
-import android.content.Context
 import com.google.gson.Gson
 import com.nm.infrastructure.BuildConfig
-import com.nm.infrastructure.R
 import okhttp3.HttpUrl
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient

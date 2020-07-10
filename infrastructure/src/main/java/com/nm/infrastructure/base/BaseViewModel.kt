@@ -15,6 +15,8 @@ abstract class BaseViewModel(private val network: Network) : DefaultViewModel() 
     val empty: LiveData<Boolean> get() = _empty
 
     val error: LiveData<Boolean> get() = _error
+
+
     
     protected val resourcesStringError: ResourcesStringError by inject()
 
@@ -49,6 +51,7 @@ abstract class BaseViewModel(private val network: Network) : DefaultViewModel() 
     }
 
     open fun doOnError(throwable: Throwable) {
+        val i = 10
     }
 
     companion object {
